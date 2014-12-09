@@ -10,21 +10,22 @@ html
       .row
         .col-md-7
           .ebook-cover
-            img.img-responsive.cover-img.center-block(src="static/images/placeholder.jpg")
+            img.img-responsive.cover-img.center-block(src=book.image)
 
         .col-md-5.text-left
           .ebook-info
             .row
               h3= book.title
             .row
-              h5 Author
+              h5= " & ".join(book.authors)
             .row
               p= book.description
             .row
-              button.btn.btn-success Download
+              button.btn.btn-success= book.price
       .row
-        button.btn.btn-primary Request New Book
+        a(href="/")
+          button.btn.btn-primary Request New Book
 
 
-
+  script(src="static/js/jquery-2.1.1.min.js")
   script(src="static/js/bootstrap.min.js")
