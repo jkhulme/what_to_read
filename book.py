@@ -3,6 +3,7 @@ class Book(object):
     def __init__(self, book_data):
         print book_data.keys()
         self.id = book_data.get("id", "ERR: Missing id")
+        self.purchase_link = "/api/v1/product/purchase/" + self.id
         self.title = book_data.get("name", "ERR: Missing Title")
         self.authors = self.author_names(book_data.get("authors", [{}]))
         self.description = book_data.get("description", "ERR: Missing description")

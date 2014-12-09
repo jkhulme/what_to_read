@@ -21,7 +21,8 @@ html
             .row
               p= book.description
             .row
-              button.btn.btn-success= book.price
+              a#purchase_link(href=book.purchase_link)
+                button.btn.btn-success= book.price
       .row.col-md-4.col-md-offset-4.text-center
         a(href="/")
           button.btn.btn-primary.btn-lg Request New Book
@@ -29,3 +30,4 @@ html
 
   script(src="static/js/jquery-2.1.1.min.js")
   script(src="static/js/bootstrap.min.js")
+  script(src="static/js/what_to_read.js")
